@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    GameManager gameManager; // reference our gamemanager script
+    
     [Header("ReferenceEnemy")]
     public GameObject TargetEnemy;
 
@@ -49,6 +51,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.FindObjectOfType<GameManager>();
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         FlashlightObj = GameObject.Find("FlashLightOBJ").GetComponent<Light>(); // automatically gets the spotlight on the character through string reference
         FlashlightObj.enabled = false; // turns off the component (the light)
@@ -258,14 +261,24 @@ public class PlayerController : MonoBehaviour
 
     public void LookInput(InputAction.CallbackContext context) // function to see if player had pressed a certain button or not 
     {
-        MouseDelta = context.ReadValue<Vector2>(); // MouseDelta variable will hold the vector2 value within it
+        if (!gameManager.IsPaused) 
+        {
+            MouseDelta = context.ReadValue<Vector2>(); // MouseDelta variable will hold the vector2 value within it
+        }
     }
 
     void CameraFollow()
     {
-        CamCurrentXrotation += MouseDelta.y * LookSens; // add the mousevalue and times the rotation to the camera and finally multiply it all by the sensetivity value
-        CamCurrentXrotation = Mathf.Clamp(CamCurrentXrotation, MinXTurn, MaxXTurn); // limits the up and down loooking of the character
-        CameraOBJ.localEulerAngles = new Vector3(-CamCurrentXrotation, 0, 0); // adds the camcurrent x rotation to the cameraOBJ gameobject
-        transform.eulerAngles += new Vector3(0, MouseDelta.x * LookSens, 0);
+        if (!gameManager.IsPaused) // checks in our gamanager script if the game is currently not paused
+        {
+            CamCurrentXrotation += MouseDelta.y * LookSens; // add the mousevalue and times the rotation to the camera and finally multiply it all by the sensetivity value
+            CamCurrentXrotation = Mathf.Clamp(CamCurrentXrotation, MinXTurn, MaxXTurn); // limits the up and down loooking of the character
+            CameraOBJ.localEulerAngles = new Vector3(-CamCurrentXrotation, 0, 0); // adds the camcurrent x rotation to the cameraOBJ gameobject
+            transform.eulerAngles += new Vector3(0, MouseDelta.x * LookSens, 0);
+        }
+        else // if it is paused then to avoid the player from spinning around
+        {
+            MouseDelta = Vector2.zero; // mousedelta is reset to 0 so there is no accumulated mouse movement when paused
+        }
     }
 }

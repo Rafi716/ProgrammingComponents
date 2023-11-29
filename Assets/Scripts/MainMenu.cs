@@ -7,12 +7,14 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
+    [Header("MenuButtons")]
     [SerializeField] Button PlayButton; // button for play
     [SerializeField] Button OptionsButton; // option menu
     [SerializeField] Button QuitButton; // button for quitting
     [SerializeField] Button BackButton; // button for going back
     [SerializeField] TMP_Dropdown ResolutionDropdownmenu;
-
+    
+    [Header("OptionsReference")]
     [SerializeField] GameObject OptionMenu;
 
     // Start is called before the first frame update
