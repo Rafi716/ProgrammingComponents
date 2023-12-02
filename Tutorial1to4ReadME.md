@@ -1120,7 +1120,7 @@ The following results should occur:
 
 * And the result from our previous script of enemy behaviour, we can see when the enemy collides with the player – they will take damage!
 
-[https://github.com/Rafi716/ProgrammingComponents/assets/125368921/97af4272-aceb-4fe0-8e23-0cfe61a8c37d](https://github.com/Rafi716/ProgrammingComponents/assets/125368921/97af4272-aceb-4fe0-8e23-0cfe61a8c37d)https://github.com/Rafi716/ProgrammingComponents/assets/125368921/97af4272-aceb-4fe0-8e23-0cfe61a8c37d
+[https://github.com/Rafi716/ProgrammingComponents/assets/125368921/97af4272-aceb-4fe0-8e23-0cfe61a8c37d](https://github.com/Rafi716/ProgrammingComponents/assets/125368921/97af4272-aceb-4fe0-8e23-0cfe61a8c37d)
 
 
 
