@@ -30,13 +30,15 @@
 
 * Once we have set everything up for the flashlight, we will now create the flashlight script for manipulating the spotlight in unity to turn on or off and/or the battery had run out! To start with, we will communicate with unitys Ui in order to manipulate the UI elements:
 
-
-```Using System.Collections; ```
-```using System.Collections.Generic;```
-```using UnityEngine;```
-```using UnityEngine.UI; ```
+```Unity
+Using System.Collections; 
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI; 
+```
 
 * Afterwards, we will create three variables where one of them will be handling the UI image of the battery bars. Another variable in the float datatype which will handle the amount of power held in the battery which will be set to 1.0 since the battery chunks of the battery will be decreasing in intervals of 0.25 to slice the image up by quarters for that battery drain aesthetic. And lastly the drainage of the battery which will be used for the time when the drain should occur on the battery.
+
 ```C# 
 [Header("BatteryCanvas")]
 [SerializeField] Image BatteryBars; // to select the battery bars image to mannipulate in the game
@@ -342,13 +344,14 @@ Firstly, I initiated some new variables:
 
 * After we had set up the ui elements we can jump straight into creating a health system script in C#, ill be calling my script PlayerHealth. Before we write anything make sure to write “using UnityEngine.UI” as well as “using UnityEngine.Events” so those libraries are accessible when we code!  
 
-
-```using System.Collections;```
-```using System.Collections.Generic;```
-```using UnityEngine;```
-```using UnityEngine.Rendering;```
-```using UnityEngine.UI;```
-```using UnityEngine.Events;```
+```Unity
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
+using UnityEngine.Events;
+```
 
 * We are first going to create a completely new class for the different events the health script will go through when ran whilst also declared a bunch of variables which will be used for the different attributes of the health system of the player.
 
@@ -585,10 +588,12 @@ First, we create a new script and place it into our canvas with the image we wan
 
 * We will first, declare the variables we will be using, additionally we will also define a coroutine. Make sure to add "using UnityEngine.UI"
 
-```using System.Collections;```
-```using System.Collections.Generic;```
-```using UnityEngine;```
-```using UnityEngine.UI;```
+```Unity
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+```
 
 ```C#
 public class Damageindicator : MonoBehaviour
@@ -824,11 +829,12 @@ Firstly, we open our project from where we last left it from and select our plan
 
 * We will declare at the very top that we are using “UnityEngine.AI;” so that we can access the unitys ai libraries in our c# script. 
 
-
-```using System.Collections;```
-```using System.Collections.Generic;```
-```using UnityEngine;```
-```using UnityEngine.AI;
+```Unity
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+```
 
 * Inside our class, we will declare a few variables for different things we will manipulate for the ai agent so that we can change the enemy’s stats and behaviour. 
 
