@@ -30,20 +30,23 @@
 
 * Once we have set everything up for the flashlight, we will now create the flashlight script for manipulating the spotlight in unity to turn on or off and/or the battery had run out! To start with, we will communicate with unitys Ui in order to manipulate the UI elements:
 
-``` using System.Collections; ```
+
+```Using System.Collections; ```
 ```using System.Collections.Generic;```
 ```using UnityEngine;```
 ```using UnityEngine.UI; ```
 
 * Afterwards, we will create three variables where one of them will be handling the UI image of the battery bars. Another variable in the float datatype which will handle the amount of power held in the battery which will be set to 1.0 since the battery chunks of the battery will be decreasing in intervals of 0.25 to slice the image up by quarters for that battery drain aesthetic. And lastly the drainage of the battery which will be used for the time when the drain should occur on the battery.
-``` 
- [Header("BatteryCanvas")]
+```C# 
+[Header("BatteryCanvas")]
 [SerializeField] Image BatteryBars; // to select the battery bars image to mannipulate in the game
- [SerializeField] float Drainage = 5.0f; // float datatype for amount of power will be drained during gameplay
-   public float BatteryPower = 1.0f; // float datatype for the amount of battery power``` 
+[SerializeField] float Drainage = 5.0f; // float datatype for amount of power will be drained during gameplay
+public float BatteryPower = 1.0f; // float datatype for the amount of battery power``` 
+```
    
-* Now, we must make the variable “BatteryBars” find and capture the Battery Bars image used in unity through string reference (so make sure to spell the name correctly) and then creating an invoke repeat function whereby the function for draining the flashlights battery is carried out. 
-``` 
+* Now, we must make the variable “BatteryBars” find and capture the Battery Bars image used in unity through string reference (so make sure to spell the name correctly) and then creating an invoke repeat function whereby the function for draining the flashlights battery is carried out.
+  
+```C#
  void OnEnable()
  {
      BatteryBars = GameObject.Find("BatteryBars").GetComponent<Image>(); // variable already initiating to find the batterybars image by string when ran
@@ -54,7 +57,7 @@
 
 	Next, we create a new method for when battery drain should occur which will be referenced by the invoke repeat function for when this shall be carried out.
 
-``` 
+```C#
     void BatteryDrainage() // battery drain function
     {
         if (BatteryPower > 0.0f) // if the battery power is more than 0
@@ -66,7 +69,7 @@
 
 * And then in the update, we are just going to update the battery bars image fill amount by the power the battery has remaining.
 
-``` 
+```C#
     // Update is called once per frame
     void Update()
     {
@@ -86,7 +89,7 @@
 
 * To turn on the flashlight as well as it off, we will edit our script which contains the players ability to look around or movement to add in such features. Firstly, we start off with three variables. One variable will hold the flashlightoverlay gameobject, and the other will be a Boolean for whether the flashlight is on or off – and for the last variable, we will interact with the spotlight attached to the player to manipulate the light to turn on and off:
 
-``` 
+```C# 
     [Header("Flashlight")]
     public GameObject FlashLightOverlay; // reference pur flashlight overlay in our inspector
     private bool FlashLightActive = false;  // bool for on and off flashlight
@@ -95,7 +98,7 @@
 
 * In the same script, we will create a new method for when the flashlight is turned on when the key “F” is pressed or turned off when “F” is pressed again. 
 
-``` 
+```C#
     private void Flashlight()
     {
         if (Input.GetKeyDown(KeyCode.F)) // when key F is pressed
@@ -118,7 +121,7 @@
 
 * Now, the spotlight as well as the ui elements should disappear once the key “F” is pressed. However, the battery seems to drain even after turning off the flashlight, to avoid this we stop the invoke repeating within our flashlight script like so:
 
-``` 
+```C#
     public void StopDrain() // in order for the battery not to drain after the user had turned off the flashlight
     {
         CancelInvoke("BatteryDrainage"); // the invoke function is cancelled in order to stop drainage when the light is off 
@@ -127,7 +130,7 @@
 
 * And then add this line of code into our flashlight method within our Character look or movement script: 
 
-``` 
+```C# 
 else if (FlashLightActive == true) // else the flashlight is active
 {
     FlashLightOverlay.SetActive(false); // turn off the overlay
@@ -139,7 +142,7 @@ else if (FlashLightActive == true) // else the flashlight is active
 
 * The following method should be called in update in order for this to work in every frame.
 
-``` 
+```C# 
  void Update()
  {
      PlayerMove();
@@ -161,7 +164,7 @@ else if (FlashLightActive == true) // else the flashlight is active
 
 * The final touches for this component, is to cause the flashlight to not work as well as the UI elements to not show once the battery had depleted fully. We first reference back to the player movement or look script and create a new method which will check if the battery had reached 0, and if so, the flashlight is turned off permanently along with its UI elements. 
 
-```
+```C#
     private void BatteryDepleted() // method for when battery runs out
     {
         if (FlashLightOverlay.GetComponent<Flashlight>().BatteryPower <= 0) // if the batterypower from the flashlight script is 0
@@ -176,7 +179,7 @@ else if (FlashLightActive == true) // else the flashlight is active
 
 * I called the Battery depleted method within the flashlight method when the player had turned on the flashlight – so that the player is unable to turn on the flashlight after the battery had reached 0. 
 
-```
+```C#
 private void Flashlight()
 {
     if (Input.GetKeyDown(KeyCode.F)) // when key F is pressed
@@ -192,7 +195,7 @@ private void Flashlight()
 
 * finally, in the update we check whether the flashlight bool is on true, if so the method battery drain should run – so that the battery is checked for when it reaches 0. 
 
-```
+```C#
     void Update()
     {
         PlayerMove();
@@ -216,7 +219,7 @@ private void Flashlight()
 To do this, I wanted to create another invoke repeating function for when the flashlight is facing an object (which is the enemy) to destroy it after a certain amount of time had went by. Doing this allowed me to not create a health script for the enemies themselves and so that the enemy can also assume that the enemies health regains if the flashlight isnt facing the enemy.
 Firstly, I initiated some new variables:
 
-```
+```C#
     public float DestroyDelay = 3.0f; // the delay timer for the invoke repeating  
 	RaycastHit hit; // raycast variable 
     private bool Destroyed = false; // bool for when the object had been destroyed
@@ -224,7 +227,7 @@ Firstly, I initiated some new variables:
 
 * Then I backtracked back to the previous script (movment/look) in which I created a raycast function to check whether the flashlight is true, and if so – then a raycast pointer should face the same direction as the direction of the flashlight is currently facing. 
 
-```
+```C#
     private void RaycastIsOn() // this method will allow the raycast to be on conitnuously under the update function only if the flashlightactive bool is true
     {
         if (FlashLightActive == true) // if the bool for the flashlight is active
@@ -236,7 +239,7 @@ Firstly, I initiated some new variables:
 
 * I then decided to string reference the object using its layer so, I created one called “Target” in unity, and changed its tag to that, once I did so, I wanted to create another invokerepeating function so that there is a delay to when an object is destroyed when the raycast hits the objects collider. Whilst also creating the logic for when the flashlight is facing the enemy layer the invoke should start and when the player moves their light away from the enemy, the invoked function should not continue - additionally i also added a rule for the flashlight, where the distance is capped to the distance of where the light can reach.
 
-```
+```C#
     private void RaycastIsOn() // this method will allow the raycast to be on conitnuously under the update function only if the flashlightactive bool is true
     {
         if (FlashLightActive == true) // if the bool for the flashlight is active
@@ -267,7 +270,7 @@ Firstly, I initiated some new variables:
 
 * The invoke repeating function was then declared below the flashlight method, plus i initiated a new public gameobject variable at the top of the class: 
 
-```
+```C#
     [Header("ReferenceEnemy")]
     public GameObject TargetEnemy;
 ```
@@ -281,7 +284,7 @@ Firstly, I initiated some new variables:
 
 * for the destroy to work now, we will have to call our ```RaycastIsOn``` method in the update under the conditons of whether the flashlight is active:
 
-```
+```C#
     void Update()
     {
         PlayerMove();
@@ -302,7 +305,7 @@ Firstly, I initiated some new variables:
 
 * I later learnt that you can actually create gizmos for your raycast, so if you want to change your raycasts range and want to see the range at which the raycast is going, you may also add this part to your code in order to visualize the raycast.
 
-```
+```C#
  private void OnDrawGizmos() // this allowed me to draw the gizmos of the raycast 
  {
      if (FlashLightActive) // if the flashlight is on, gizmos will be drawn
@@ -349,7 +352,7 @@ Firstly, I initiated some new variables:
 
 * We are first going to create a completely new class for the different events the health script will go through when ran whilst also declared a bunch of variables which will be used for the different attributes of the health system of the player.
 
-```
+```C#
 public class HealthNeeds // i created a new class for the different events the health 
 {
     [Header("HealthNeeds")]
@@ -367,7 +370,7 @@ public class HealthNeeds // i created a new class for the different events the h
 
 * Afterwards, I initiated 3 different methods within our new class for the addition of health to the player, the subtraction of health and finally the percentage of health to display using those values. 
 
-```
+```C#
     public void Add(float amount) // function for adding health
     {
         CurrentValue = Mathf.Min(CurrentValue + amount, MaxHealthValue); // currentvalue is clamped at maxvalue through the mathf.min (the number thats less is always chosen)
@@ -392,7 +395,7 @@ public class HealthNeeds // i created a new class for the different events the h
 
 * Before we continue, I had to make sure to declare the class as serializable, in order to expose the custom private fields to the unity inspector. 
 
-```
+```C#
 [System.Serializable]
 public class HealthNeeds // i created a new class for the different events the health 
 {
@@ -425,7 +428,7 @@ public class HealthNeeds // i created a new class for the different events the h
 
 * After that, we go to the start function and initiate the Startvalue of the health of the player to their current health so that they start of with full health when running the program. 
 
-```
+```C#
     void Start()
     {
         HealthRemaining.CurrentValue = HealthRemaining.StartHealthValue; // health is initiated at to the start value which is the max
@@ -440,7 +443,7 @@ public class HealthNeeds // i created a new class for the different events the h
 
 * Once that’s done, we can go back to our script and add an update function whereby the health UI element is updated as the health decreases or increases by using our “PercentageLeft” function. 
 
-```
+```C#
     void Update()
     {
         HealthRemaining.HealthBar.fillAmount = HealthRemaining.PercentageLeft(); // the percentage left fucntion will determine the percentage of health is remaining for the player (depending on the players (healthneeds class) health value) (updates the health bar image)
@@ -449,14 +452,14 @@ public class HealthNeeds // i created a new class for the different events the h
 
 * Now, we go below the update function and create three new functions that will use the sub and add methods from our previous class to determine the players health and whether or not they are taking damage or in fact dead. However, we will first declare a new variable as a unity event for when a player recieves damage. And a variable referencing our new class we created called HealthRemaining. 
 
-```
+```C#
 public class PlayerHealth : MonoBehaviour
 {
     [Header("HealthEvents")]
     public HealthNeeds HealthRemaining; // calling our new class 
     public UnityEvent GetDamaged; // event for when player gets damaged by the enemy collider
 ```
-```
+```C#
     public void Healing(float amount) // function for heazling the player with a cache variable called amount in float datatype
     {
         HealthRemaining.Add(amount); // adds health onto the current health the character 
@@ -477,7 +480,7 @@ public class PlayerHealth : MonoBehaviour
 * The “GetDamaged” event is invoked when the player receives damage. The question mark in front of the invoke is a null check.
 Next, we go back to the update function and add an if statement, which will check whether the players health had reaches 0 then the player death function would activate to process the players death. 
 
-```
+```C#
     void Update()
     {
         HealthRemaining.HealthBar.fillAmount = HealthRemaining.PercentageLeft(); // the percentage left fucntion will determine the percentage of health is remaining for the player (depending on the players (healthneeds class) health value) (updates the health bar image)
@@ -491,7 +494,7 @@ Next, we go back to the update function and add an if statement, which will chec
 
 * Now, we are going to create a public interface where multiple classes will be able to share common tropes, such as in this case, anything under the Playerhealth script will be following the protocols created in the interface, which in this scenario means that damage is given to things with health.
 
-```
+```C#
 // interface is a set of methods that will target class will implement
 // by using interface you are able to access interface fields on different classes.
 // so multiple classes will by accessed through the Idamager class 
@@ -507,7 +510,7 @@ public interface Idamager
 
 * Do not forget to add the interface name near the monobehaviour of our class. 
 
-```
+```C#
 public class PlayerHealth : MonoBehaviour, Idamager
 ```
 
@@ -515,7 +518,7 @@ public class PlayerHealth : MonoBehaviour, Idamager
 
 	Once our script is open, we are going to declare three new variables. 
 
-```
+```C#
 public class EnemyBehaviour : MonoBehaviour
 {
     [Header("EnemyDamageEvents")]
@@ -531,7 +534,7 @@ Lastly, the list variable thisshouldgetdamaged will append objects into a list w
 
 * We start off with defining a coroutine whereby the player will receive damage every time the player is in the collision of the enemy. 
 
-```
+```C#
     IEnumerator DealDamage() // damage will be done with a delay
     {
         while (true) // infinite loop for damage continuously 
@@ -547,7 +550,7 @@ Lastly, the list variable thisshouldgetdamaged will append objects into a list w
 
 * lastly, we define two methods for when the player enters and exits the collision in order to give and stop damage dealt to the players health.
 
-```
+```C#
     private void OnCollisionEnter(Collision collision) // when the object / enemy collides
     {
         if (collision.gameObject.GetComponent<Idamager>() != null)  // if the object is under the idamger interface
@@ -587,7 +590,7 @@ First, we create a new script and place it into our canvas with the image we wan
 ```using UnityEngine;```
 ```using UnityEngine.UI;```
 
-```
+```C#
 public class Damageindicator : MonoBehaviour
 {
     [Header("ImageFlash")]
@@ -599,7 +602,7 @@ public class Damageindicator : MonoBehaviour
 
 * Then we will create a new method called “flashing” for when the image should appear in the game. 
 
-```
+```C#
     public void Flashing()
     {
         if (FlashImageAway != null) // if the image is active then stop the coroutine
@@ -615,7 +618,7 @@ public class Damageindicator : MonoBehaviour
 
 * And lastly, we will declare the Coroutine “FadeTheImage” which will gradulally decrease the alpha of the image that’s been shown to the players screen in a while loop in case the player remains in the collision between themselves and the enemy for a continuous show of the image, as well as it should fade after the image had shown.
 
-```
+```C#
     IEnumerator FadeTheImage() // fades image coroutine
     {
         float imageAlpha = 1.0f; // sets the initial alpha to opaque
@@ -679,7 +682,7 @@ The results should look like this:
 
 * We will first declare the variables we will be accessing, in this case a float for the amount of charge the battery will get when the player is interacting with the object, and a gameobject variable in order to access the players flashlight overlay.
 
-```
+```C#
 public class BatteryCharge : MonoBehaviour
 {
     [Header("BatteryChargeup")]
@@ -689,7 +692,7 @@ public class BatteryCharge : MonoBehaviour
 
 * Since we set the batteries box collider to “is trigger” , we will be able to manipulate what happens to the gameobject once the player enters its trigger zone through “ void on trigger enter “ where we will add a conditional statement to check if the following collision between the trigger and the collider is in fact the player themselves. 
 
-```
+```C#
     private void OnTriggerEnter(Collider other) // when the player enters its trigger
     {
         if (other.CompareTag("Player")) // player tag checked
@@ -701,7 +704,7 @@ public class BatteryCharge : MonoBehaviour
 
 * After, we will reference the flashlight script from the gameobject variable we created earlier and add a condition to check whether the players flashlight battery power is less than 1.0  as well as a null check.
 
-```
+```C#
     private void OnTriggerEnter(Collider other) // when the player enters its trigger
     {
         if (other.CompareTag("Player")) // player tag checked
@@ -718,7 +721,7 @@ public class BatteryCharge : MonoBehaviour
 
 * If this is the case, we will be clamping the players battery between 0 and 1 so that they will not be able to increase battery power above 1.0 as well as below 0. And then, we will increment the battery power by the variable we created earlier that will be the amount of power added. Finally, we will destroy the gameobject so that the player can find the batteries rather than having an unlimited supply of power. 
 
-```
+```C#
     private void OnTriggerEnter(Collider other) // when the player enters its trigger
     {
         if (other.CompareTag("Player")) // player tag checked
@@ -739,17 +742,17 @@ public class BatteryCharge : MonoBehaviour
 
 * We will first declare at the very top of the class, a serialized variable to hold the battery gameobjects and a public gameobject for the enemies we are dealing with.
 
-```
+```C#
 	[SerializeField] GameObject BatteryDropped; 
 ```
 
-```
+```C#
     public GameObject TargetEnemy;
 ```
 
 * We will then proceed to create an if statement to check if the battery game object is not null and if so, we will cache the location of the enemys position and then instantiate the battery gameobject to the cache variable which will hold the last location of the enemy. And then destroy the gameobject.
 
-```
+```C#
     private void DestroyTarget() // method for destroying a gameobject
     {
         if (BatteryDropped != null)
@@ -829,7 +832,7 @@ Firstly, we open our project from where we last left it from and select our plan
 
 * Inside our class, we will declare a few variables for different things we will manipulate for the ai agent so that we can change the enemy’s stats and behaviour. 
 
-```
+```C#
     [Header("EnemyStats")]
     public float WalkSpeed; // enemy walk speed
     public float RunSpeed; // enemy run speed
@@ -843,7 +846,7 @@ Firstly, we open our project from where we last left it from and select our plan
 
 * Another group of variables we will be creating is for when the enemy is in stray mode so that they can wander the map and act as if they are in idle mode. 
 
-```
+```C#
     [Header("StrayBehaviour")]
     public float MinStrayDistance; // minimum distance the enemy will wander 
     public float MaxStrayDistance; // maximum distance the enemy will wander
@@ -853,7 +856,7 @@ Firstly, we open our project from where we last left it from and select our plan
 
 * And the last two variables will deal with the navmeshagent itself as well as the players location in real time so that we can manipulate the distance at which the player is detected by the enemy. 
 
-```
+```C#
     [Header("NavMesh")]
     private NavMeshAgent Agent; // the navmesh agent itself
 
@@ -863,7 +866,7 @@ Firstly, we open our project from where we last left it from and select our plan
 
 * Before we start anything in our class, we will be declaring two enums, which will deal with the types of enemies such as if you want to create passive mobs in your game that wonder around or aggressive mobs that will attack the player as well as creating an enum for the different states the mob will be in depending on different events. I will be creating one type of mob where the mob will always be an enemy to the player as well as switch from passive to aggressive depending on the players location and if they are nearby to the enemy.
 
-```
+```C#
 public enum EnemyType // the two versions of the enemy types
 {
     Passive,
@@ -881,7 +884,7 @@ public class EnemyAI : MonoBehaviour
 
 * Back to our class, we will declare a few more variables to reference our enums as well as two floats for the distance between the player and the enemy and a distance the enemy will detect the player at.
 
-```
+```C#
     [Header("AI")]
     public EnemyType enemyType; // type the enemy can be
     public EnemyState enemyState; // the state the enemy will be in
@@ -892,7 +895,7 @@ public class EnemyAI : MonoBehaviour
 
 * We will now declare the void on awake function so that our “Agent” variable grabs the NavMeshAgent component. 
 
-```
+```C#
     private void Awake()
     {
         Agent = GetComponent<NavMeshAgent>(); // agent contains the component of navmesh
@@ -901,7 +904,7 @@ public class EnemyAI : MonoBehaviour
 
 * Next will declare two new methods which will activate only when the enemy is in a particular enemy type as well as its current state.
 
-```
+```C#
     void PassiveUpdate() // method for handling the idle and stray behaviour of the mobs
     {
 
@@ -915,7 +918,7 @@ public class EnemyAI : MonoBehaviour
 
 * To activate the methods we created, we will initialise a switch statement in the update method which will check for the state of the enemy and declare what method should be carried out at each case. Additionally, we will update the players location variable which checks for the distance between the enemy and the player.
 
-```
+```C#
     void Update()
     {
         DistanceBetweenPlayer = Vector3.Distance(transform.position, Playerslocation.transform.position); // updates the distance between the enemy and the player
@@ -930,7 +933,7 @@ public class EnemyAI : MonoBehaviour
 
 * We will create another method, which will declare the state the enemy will be in, and what protocols it should follow through switch statements whilst also allowing the gameobject to move in certain cases and setting the enemies speed in those cases.
 
-```
+```C#
     void SetState(EnemyState NewState) // setting the enemy state, idle, stray, attacking
     {
         enemyState = NewState; // update the enemies state with the cache variable 
@@ -960,7 +963,7 @@ public class EnemyAI : MonoBehaviour
 
 * After creating this method, we will create yet another method, which will set the enemys location for where to stroll off to when its in stray mode and not in idle mode. But before we do that, we will have to create a vector 3 method first for finding and storing a random location in the range of the enemys current location and is not too close to the player on the navmesh area we created earlier. After a certain number of attempts of trying to find the best location, it will return the best location to use for the enemy to use. 
 
-```
+```C#
     Vector3 EnemyStrayLocation() // method to find different locations to wander towards
     {
         NavMeshHit hit; // store info on the ray hit on the navmesh area
@@ -982,7 +985,7 @@ public class EnemyAI : MonoBehaviour
 
 * Previously we spoke about creating a method to set the enemy location, now we will create this method which will be responsible for setting the enemy’s location to wander towards when it is not in “idlemode”. It will change the enemy state to “StrayMode” and set its location so that the enemy patrols the area on the navmeshed map.
 
-```
+```C#
     void NewStrayLocation() // method for finding new destination to wander for the enemy
     {
         if (enemyState != EnemyState.idleMode) // check if the enemy isnt in idle
@@ -994,7 +997,7 @@ public class EnemyAI : MonoBehaviour
 
 * Closer to the end, we will now update our “PassiveUpdate” method in order to get the logic right for when the enemy is in straymode and had reached its destination, to switch to idle mode till a new stray location is given to the enemy after our delay variables we created earlier. The passive timer will also run to consider how long the enemy has been passive for before it changes to a different behaviour (StrayMode). Depending on the distance between the player and the enemy, the enemy type will change from passive to aggro if the player is in detection range, however if it is in un-detected range, the enemy will remain in stray and idle mode. 
 
-```
+```C#
     void PassiveUpdate() // method for handling the idle and stray behaviour of the mobs
     {
         if (enemyState == EnemyState.StrayMode && Agent.remainingDistance < 0.1f) // check if the enemy is in straymode and reached the destination
@@ -1040,7 +1043,7 @@ public class EnemyAI : MonoBehaviour
 
 * After we had updated our “PassiveUpdate” with the logic of when the player is detected and when the enemy should return to passive from aggro types, we head over to our “AggressiveUpdate” so that the enemy can pursue the player when its not passive. This is done through a conditional statement which will check if the enemy is in detection range, the enemy will change to the attacking state which will follow the players location, and if the player leaves the detection range, the enemy transitions to passive and returns to the idle state. 
 
-```
+```C#
     void AggressiveUpdate()  // Perform attacking behavior here when in Aggressive mode
     {
         if (DistanceBetweenPlayer >= DistanceToAvoid) // checks if distance the is greater than or equal to the distance the player is undetected  
@@ -1055,7 +1058,7 @@ public class EnemyAI : MonoBehaviour
 
 * Afterwards, we go to our start function and set the enemies state to straymode so that it is always straying when the program is running. 
 
-```
+```C#
     void Start()
     {
         SetState(EnemyState.StrayMode); // enemy will always start straying
