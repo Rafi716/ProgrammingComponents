@@ -311,7 +311,7 @@ Firstly, I initiated some new variables:
 
 ![Alt text](https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%209.png )
 
-(https://github.com/Rafi716/ProgrammingComponents/assets/125368921/781c582a-42ed-44b7-be83-ae5a2068c9f4)
+[(https://github.com/Rafi716/ProgrammingComponents/assets/125368921/781c582a-42ed-44b7-be83-ae5a2068c9f4)](https://github.com/Rafi716/ProgrammingComponents/assets/125368921/3163cafa-5c2a-4aee-b738-678cc43111dc)
 
 
 * I later learnt that you can actually create gizmos for your raycast, so if you want to change your raycasts range and want to see the range at which the raycast is going, you may also add this part to your code in order to visualize the raycast.
