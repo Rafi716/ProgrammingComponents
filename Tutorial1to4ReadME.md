@@ -5,7 +5,7 @@
 
 [TOC]
 
-#Tutorial 1 Component 1 Flashlight
+# Tutorial 1 Component 1 Flashlight
 * We are going to start of by creating a flashlight for our player so that they can walk around in our map, as well as use the flashlight to attack enemies.
 
 * Opening our Unity scene, assuming you have already created your character and their movement functions, we will be creating child objects inside our parent object which will contain the camera and create another child object of the camera for the flashlight which will contain our light. Right click on the object and insert“light"“spotlight” which should face the direction the player is facing. Here is my example: 
