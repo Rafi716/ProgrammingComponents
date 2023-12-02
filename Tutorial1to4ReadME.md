@@ -674,9 +674,9 @@ The results should look like this:
 
 * First of all, we are going to create a gameobject which will be the batteries for the player, in this case I’m adding a cylinder and adding a capsule collider as well as a rigid body additionally a box collider which will be set to trigger – in order to interact with the battery gameobject. 
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%203/TUT%203%20SS%201.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%203/TUT%203%20SS%201.png )
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%203/TUT%203%20SS%202.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%203/TUT%203%20SS%202.png )
 
 * Once that is completed, we are going to create a new script which will be added onto this gameobject. The script will be called BatteryCharge – but you may call it anything of your choosing.
 
