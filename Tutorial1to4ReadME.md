@@ -311,6 +311,9 @@ Firstly, I initiated some new variables:
 
 ![Alt text](https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%209.png )
 
+[![Video Title]([https://img.youtube.com/vi/YOUR_VIDEO_ID_HERE/0.jpg](https://youtu.be/zQVo-XvDxbY))]([https://www.youtube.com/watch?v=YOUR_VIDEO_ID_HERE](https://youtu.be/zQVo-XvDxbY))
+
+
 * I later learnt that you can actually create gizmos for your raycast, so if you want to change your raycasts range and want to see the range at which the raycast is going, you may also add this part to your code in order to visualize the raycast.
 
 ```C#
