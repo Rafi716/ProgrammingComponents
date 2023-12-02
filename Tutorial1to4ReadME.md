@@ -283,7 +283,7 @@ Firstly, I initiated some new variables:
     public GameObject TargetEnemy;
 ```
 
-```
+```C#
     private void DestroyTarget() // method for destroying a gameobject
     {
             Destroy(TargetEnemy); // Destroy the target object
