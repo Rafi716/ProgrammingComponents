@@ -10,23 +10,23 @@
 
 * Opening our Unity scene, assuming you have already created your character and their movement functions, we will be creating child objects inside our parent object which will contain the camera and create another child object of the camera for the flashlight which will contain our light. Right click on the object and insert“light"“spotlight” which should face the direction the player is facing. Here is my example: 
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%201.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%201.png )
 
 * Follow the settings I have made for my flashlight or create your own flashlight aesthetic with the options under the light panel. Do not forget to add a cookie to create that flashlight circular effect like I did from the standard assets of your choosing: 
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%202.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%202.png )
 
 * we need the flashlight to have a battery, and an off and on switch, which is what im going to do next by creating the ui first. online I found some ui elements that I can use for educational purposes which I will with the following folder I am using to create the flashlight mechanics.
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%203.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%203.png )
 
 * After that, create a canvas, and select a panel and put the alpha to 0 to see in the game. Rename the canvas “flashlight overlay” or whatever helps you remember what the panel’s purpose are – and add in your chosen sprites for the battery in the project like I did:
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%204.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%204.png )
 
 * On the battery bars sprites, you have chosen, make sure to change the image type to filled, to manipulate the bars when power is running out for the player when they run the program. 
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%205.png)
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%205.png)
 
 * Once we have set everything up for the flashlight, we will now create the flashlight script for manipulating the spotlight in unity to turn on or off and/or the battery had run out! To start with, we will communicate with unitys Ui in order to manipulate the UI elements:
 
@@ -79,12 +79,12 @@ public float BatteryPower = 1.0f; // float datatype for the amount of battery po
 
 * Now, add this script onto the “flashlightoverlay” and reference the battery bars image from the flashlightoverlay object under the canvas and press play!
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%206.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%206.png )
 
 *This is what the results should look like:
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%201.png )
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%202.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%201.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%202.png )
 
 
 * To turn on the flashlight as well as it off, we will edit our script which contains the players ability to look around or movement to add in such features. Firstly, we start off with three variables. One variable will hold the flashlightoverlay gameobject, and the other will be a Boolean for whether the flashlight is on or off – and for the last variable, we will interact with the spotlight attached to the player to manipulate the light to turn on and off:
@@ -152,11 +152,11 @@ else if (FlashLightActive == true) // else the flashlight is active
 
 * The results should be the following:
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%203.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%203.png )
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%204.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%204.png )
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%205.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%205.png )
 
 
 
@@ -209,9 +209,9 @@ private void Flashlight()
 
 * The flashlight results should look like this: 
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%206.png )
+![Alt text](https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%206.png )
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%207.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%207.png )
 
 * As you can see, the battery ran out the flashlight turned off! Repeatedly tapping f will not turn the light back on. The flashlight component is now complete!
 
@@ -299,7 +299,7 @@ Firstly, I initiated some new variables:
 
 * The results should look like this:
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%208.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%208.png )
 
 ![Alt text](https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%209.png )
 
@@ -338,7 +338,7 @@ Firstly, I initiated some new variables:
 
 *  Right on the canvas we created earlier, create a new panel, lower the alpha to zero and add and image to said panel, which we will use as the health bar for the player.
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%201.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%201.png )
 
 * After we had set up the ui elements we can jump straight into creating a health system script in C#, ill be calling my script PlayerHealth. Before we write anything make sure to write “using UnityEngine.UI” as well as “using UnityEngine.Events” so those libraries are accessible when we code!  
 
@@ -437,7 +437,7 @@ public class HealthNeeds // i created a new class for the different events the h
 
 * Now if we hop back to unity, we can see in the inspector, after we have attached the script to our player, the different fields for the players health! 
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%202.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%202.png )
 
 * Make sure to drag and drop the healthbar image from your canvas into the healthbar field in the script.
 
@@ -570,18 +570,18 @@ Lastly, the list variable thisshouldgetdamaged will append objects into a list w
 
 * Finally, we can head on over back to unity and test out the damage: -You may adjust the dps and damage output to your liking in the inspector.
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%203.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%203.png )
 
 * As you can see, the damage is given when we collide with the block and damage isn’t given when we leave its collider, additionally, if the player was to stand in the blocks collider and stay there -they will receive continuous damage!
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%201%20RESULT.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%201%20RESULT.png )
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%202%20RESULT.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%202%20RESULT.png )
 
 * As an extension, I decided to also add in the indication of damage so that the players screen is smothered in blood once they hit an enemy.
 First, we create a new script and place it into our canvas with the image we want appearing when the player takes damage. 
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%204.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%204.png )
 
 * We will first, declare the variables we will be using, additionally we will also define a coroutine. Make sure to add "using UnityEngine.UI"
 
@@ -634,19 +634,19 @@ public class Damageindicator : MonoBehaviour
 
 * To hook this up on unity, we will have to attach the damageindicator script onto our player gameobject under the panel you had created for them.
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%205.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%205.png )
 
 * Adjust the flashing of your image to your liking as long as its in the 0. As it’ll be too fast to see if its anything above (or is) 1.
 Head on over back to your player gameobject – and reference your image from your canvas that will be shown to the player when they receive damage
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%206.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%206.png )
 
 * Make sure to choose our flashing function, so that the function runs when the damage occurs.
 The results should look like this: 
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%203%20RESULT.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%203%20RESULT.png )
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%204%20RESULT.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%204%20RESULT.png )
 
 * And there you have it, the working health script of the player!
 
@@ -771,23 +771,23 @@ public class BatteryCharge : MonoBehaviour
 
 * The results should look like this for when the player loses battery, they will replenish (in my case) 0.25f of their battery life back if they collide into a battery game object:
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%203/TUT%203%20SS%201%20RESULT.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%203/TUT%203%20SS%201%20RESULT.png )
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%203/TUT%203%20SS%202%20RESULT.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%203/TUT%203%20SS%202%20RESULT.png )
 
 * And, when the player has full battery and they collide with the battery gameobject, nothing should occur like so: 
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%203/TUT%203%20SS%203%20RESULT.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%203/TUT%203%20SS%203%20RESULT.png )
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%203/TUT%203%20SS%204%20RESULT.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%203/TUT%203%20SS%204%20RESULT.png )
 
 * As you can see, after hitting the object, the battery wasn’t consumed as well as it rolled away after the interaction.
 
 * Lastly, when the gameobject is destroyed by the flashlight, the battery will be instantiated in its place:
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%203/TUT%203%20SS%205%20RESULT.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%203/TUT%203%20SS%205%20RESULT.png )
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%203/TUT%203%20SS%206%20RESULT.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%203/TUT%203%20SS%206%20RESULT.png )
 
 
 
@@ -808,15 +808,15 @@ public class BatteryCharge : MonoBehaviour
 * For our last component, we will create a navmesh agent so that the enemy will follow the player once the player is in the distance range the enemy can detect the player and a barrier for when the enemy should change states when the player is undetected from aggressive to passive so that the enemy does not attack the player and the enemy just moves around the map whilst also being idle.
 Firstly, we open our project from where we last left it from and select our plane we created, you may have created a terrain or something different to my ground layer, if so, just select the ground for your game. Once selected we will head over to the windows panel, head on over to the ai and select navigation.
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%204/TUT%204%20SS%201.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%204/TUT%204%20SS%201.png )
 
 * Once selected we will bake our ground layer so that the agent can cover the whole map, you may have different objects in your scene that you may want to keep as obstacles, if so – just bake the gameobjects as “not walkable” To bake the area we are going to head on over to the bake button in the navigation window and simply press bake.
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%204/TUT%204%20SS%202.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%204/TUT%204%20SS%202.png )
 
 * The next step, is to apply a nav mesh agent to our enemy gameobject so the navmesh being moved is the enemy itself.
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%204/TUT%204%20SS%203.png)
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%204/TUT%204%20SS%203.png)
 
 * Make sure to manipulate the cylinder inside your gameobject so that it touches the ground layer perfectly for better results.
 
@@ -1067,32 +1067,32 @@ public class EnemyAI : MonoBehaviour
 
 * Back in unity, I have gone ahead and put in some values for the min and max values for the Stray behaviour of the enemy, you may change this to your liking:
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%204/TUT%204%20SS%205.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%204/TUT%204%20SS%205.png )
 
 * Do not forget to change the enemies stats to your liking too, the passive timer and passive duration should stay at 0 so we can privatise those values in our code since we won’t be changing those values. 
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%204/TUT%204%20SS%206.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%204/TUT%204%20SS%206.png )
 
 * You may also change the detection in which the player is undetected so when the player reaches a number that is above the undetected, the player will be followed by the enemy. 
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%204/TUT%204%20SS%208.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%204/TUT%204%20SS%208.png )
 
 * Finally, we are set up for action!
 The following results should occur:
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%204/TUT%204%20SS%201%20RESULT.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%204/TUT%204%20SS%201%20RESULT.png )
 
 * As you can see, after the player in a distance above the distance the player should avoid, the gameobject will switch to a passive enemy type as well the state being in either stray or idle mode.
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%204/TUT%204%20SS%202%20RESULT.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%204/TUT%204%20SS%202%20RESULT.png )
 
 * The object goes into idle and is at a total standstill whilst the passive timer and duration is running, and a random location is chosen after a random value between max and min stray time is selected which will loop the gameobject back into stray mode.
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%204/TUT%204%20SS%203%20RESULT.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%204/TUT%204%20SS%203%20RESULT.png )
 
 * And when the player is in the detected range, the enemy type is changed to aggro as well as the attacking state initiating the game object to follow the player.
 
-![Alt text](image https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%204/TUT%204%20SS%204%20RESULT.png )
+![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%204/TUT%204%20SS%204%20RESULT.png )
 
 * And the result from our previous script of enemy behaviour, we can see when the enemy collides with the player – they will take damage!
 
