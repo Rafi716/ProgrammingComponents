@@ -5,7 +5,7 @@
 
 [TOC]
 
-# Tutorial 1 Component 1 Flashlight
+## Tutorial 1 Component 1 Flashlight
 * We are going to start of by creating a flashlight for our player so that they can walk around in our map, as well as use the flashlight to attack enemies.
 
 * Opening our Unity scene, assuming you have already created your character and their movement functions, we will be creating child objects inside our parent object which will contain the camera and create another child object of the camera for the flashlight which will contain our light. Right click on the object and insert“light"“spotlight” which should face the direction the player is facing. Here is my example: 
@@ -336,7 +336,7 @@ Firstly, I initiated some new variables:
 
 
 
-# Tutorial 2 Component 2 Player Health
+## Tutorial 2 Component 2 Player Health
 * In this tutorial, we will be creating the enemies behaviour to damange our player, as well as the player having a health function in the game.
 
 *  Right on the canvas we created earlier, create a new panel, lower the alpha to zero and add and image to said panel, which we will use as the health bar for the player.
@@ -672,7 +672,7 @@ The results should look like this:
 
 
 
-# Tutorial 3 Component 3 Dropping Objects
+## Tutorial 3 Component 3 Dropping Objects
 
 * Since we have created the script for the player flashlight, we want to be able to recharge the battery even if the battery had depleted completely so that the player is able to access the flashlight even after using all the battery.
 
@@ -809,7 +809,7 @@ public class BatteryCharge : MonoBehaviour
 
 
 
-# Tutorial 4 Component 4 Enemy AI
+## Tutorial 4 Component 4 Enemy AI
 
 * For our last component, we will create a navmesh agent so that the enemy will follow the player once the player is in the distance range the enemy can detect the player and a barrier for when the enemy should change states when the player is undetected from aggressive to passive so that the enemy does not attack the player and the enemy just moves around the map whilst also being idle.
 Firstly, we open our project from where we last left it from and select our plane we created, you may have created a terrain or something different to my ground layer, if so, just select the ground for your game. Once selected we will head over to the windows panel, head on over to the ai and select navigation.
