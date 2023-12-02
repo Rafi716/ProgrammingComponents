@@ -86,6 +86,7 @@ public float BatteryPower = 1.0f; // float datatype for the amount of battery po
 *This is what the results should look like:
 
 ![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%201.png )
+
 ![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20RESULT%202.png )
 
 
