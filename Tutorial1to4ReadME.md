@@ -807,6 +807,10 @@ public class BatteryCharge : MonoBehaviour
 
 ![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%203/TUT%203%20SS%206%20RESULT.png )
 
+[https://github.com/Rafi716/ProgrammingComponents/assets/125368921/b693a654-8b29-40e6-968c-14dac737a6a3](https://github.com/Rafi716/ProgrammingComponents/assets/125368921/b693a654-8b29-40e6-968c-14dac737a6a3
+)
+
+
 
 
 
@@ -1116,7 +1120,7 @@ The following results should occur:
 
 * And the result from our previous script of enemy behaviour, we can see when the enemy collides with the player – they will take damage!
 
-
+[https://github.com/Rafi716/ProgrammingComponents/assets/125368921/97af4272-aceb-4fe0-8e23-0cfe61a8c37d](https://github.com/Rafi716/ProgrammingComponents/assets/125368921/97af4272-aceb-4fe0-8e23-0cfe61a8c37d)https://github.com/Rafi716/ProgrammingComponents/assets/125368921/97af4272-aceb-4fe0-8e23-0cfe61a8c37d
 
 
 
