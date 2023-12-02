@@ -1,13 +1,22 @@
 # Horror game components programming tutorials
 **Table of Contents**
 
-[TOCM]
+
 - [Tutorial 1](#section-1)
 - [Tutorial 2](#section-2)
 - [Tutorial 3](#section-3)
 - [Tutorial 4](#section-4)
 
-[TOC]
+
+
+
+
+
+
+
+
+
+
 
 ## Tutorial 1 Component 1 Flashlight
 <a name="section-1"></a>
