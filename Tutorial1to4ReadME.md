@@ -663,6 +663,8 @@ The results should look like this:
 
 ![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%204%20RESULT.png )
 
+[https://github.com/Rafi716/ProgrammingComponents/assets/125368921/f5da6886-78c8-4a59-87b4-0ccc3fc2de46](https://github.com/Rafi716/ProgrammingComponents/assets/125368921/f5da6886-78c8-4a59-87b4-0ccc3fc2de46)
+
 * And there you have it, the working health script of the player!
 
 
