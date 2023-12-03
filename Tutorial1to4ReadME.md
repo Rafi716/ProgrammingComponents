@@ -1,4 +1,11 @@
 # Horror game components programming tutorials
+
+Hello and welcome to this repository! In this Readme file, we'll embark on a journey to craft four essential components designed specifically for a survival horror game. Whether you're delving into game development or seeking to enhance your survival horror project, this guide will equip you with the expertise to create these crucial elements.
+
+Throughout this tutorial, we'll delve deep into crafting four distinct components, each pivotal for creating an immersive and spine-chilling gaming experience. From mastering eerie atmospheres to developing gameplay mechanics that induce suspense, we'll cover it all.
+
+So, let's dive in and unravel the secrets behind constructing these components. By the end, you'll possess the knowledge and tools to integrate these elements seamlessly into your own survival horror game, elevating it to new levels of engagement and intensity. Let's get started!
+
 **Table of Contents**
 
 
