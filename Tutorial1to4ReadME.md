@@ -37,11 +37,11 @@ So, let's dive in and unravel the secrets behind constructing these components. 
 
 ![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%202.png )
 
-* we need the flashlight to have a battery, and an off and on switch, which is what im going to do next by creating the ui first. online I found some ui elements that I can use for educational purposes which I will with the following folder I am using to create the flashlight mechanics.
+* we need the flashlight to have a battery, and an off and on switch, which is what im going to do next by creating the UI first. online I found some UI elements that I can use for educational purposes which I will with the following folder I am using to create the flashlight mechanics.
 
 ![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%203.png )
 
-* After that, create a canvas, and select a panel and put the alpha to 0 to see in the game. Rename the canvas “flashlight overlay” or whatever helps you remember what the panel’s purpose are – and add in your chosen sprites for the battery in the project like I did:
+* After that, create a canvas, and select a panel and put the alpha to 0 to see in the game. Rename the canvas `flashlight overlay` or whatever helps you remember what the panel’s purpose are – and add in your chosen sprites for the battery in the project like I did:
 
 ![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%204.png )
 
@@ -49,7 +49,7 @@ So, let's dive in and unravel the secrets behind constructing these components. 
 
 ![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%205.png)
 
-* Once we have set everything up for the flashlight, we will now create the flashlight script for manipulating the spotlight in unity to turn on or off and/or the battery had run out! To start with, we will communicate with unitys Ui in order to manipulate the UI elements:
+* Once we have set everything up for the flashlight, we will now create the flashlight script for manipulating the spotlight in unity to turn on or off and/or the battery had run out! To start with, we will communicate with unitys UI in order to manipulate the UI elements:
 
 ```Unity
 Using System.Collections; 
@@ -85,7 +85,7 @@ public float BatteryPower = 1.0f; // float datatype for the amount of battery po
     {
         if (BatteryPower > 0.0f) // if the battery power is more than 0
         {
-            BatteryPower -= 0.25f; // remove 0.25 units which means remove a quater of the ui image 
+            BatteryPower -= 0.25f; // remove 0.25 units which means remove a quater of the UI image 
         }
     }
 ``` 
@@ -96,7 +96,7 @@ public float BatteryPower = 1.0f; // float datatype for the amount of battery po
     // Update is called once per frame
     void Update()
     {
-        BatteryBars.fillAmount = BatteryPower; // batterybars is dependent on the batterypower remaining so the ui element should slice horzontally when its losing power
+        BatteryBars.fillAmount = BatteryPower; // batterybars is dependent on the batterypower remaining so the UI element should slice horzontally when its losing power
     }
 ``` 
 
@@ -143,7 +143,7 @@ public float BatteryPower = 1.0f; // float datatype for the amount of battery po
     }
 ``` 
 
-* Now, the spotlight as well as the ui elements should disappear once the key “F” is pressed. However, the battery seems to drain even after turning off the flashlight, to avoid this we stop the invoke repeating within our flashlight script like so:
+* Now, the spotlight as well as the UI elements should disappear once the key “F” is pressed. However, the battery seems to drain even after turning off the flashlight, to avoid this we stop the invoke repeating within our flashlight script like so:
 
 ```C#
     public void StopDrain() // in order for the battery not to drain after the user had turned off the flashlight
@@ -368,7 +368,7 @@ Firstly, I initiated some new variables:
 
 ![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%202/TUT%202%20SS%201.png )
 
-* After we had set up the ui elements we can jump straight into creating a health system script in C#, ill be calling my script PlayerHealth. Before we write anything make sure to write “using UnityEngine.UI” as well as “using UnityEngine.Events” so those libraries are accessible when we code!  
+* After we had set up the UI elements we can jump straight into creating a health system script in C#, ill be calling my script PlayerHealth. Before we write anything make sure to write “using UnityEngine.UI” as well as “using UnityEngine.Events” so those libraries are accessible when we code!  
 
 ```Unity
 using System.Collections;
