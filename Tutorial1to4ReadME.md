@@ -537,7 +537,7 @@ public interface Idamager
 }
 ```
 
-* Do not forget to add the `interfac` "name" near the monobehaviour of our class. 
+* Do not forget to add the `interface` "name" near the monobehaviour of our class. 
 
 ```C#
 public class PlayerHealth : MonoBehaviour, Idamager
