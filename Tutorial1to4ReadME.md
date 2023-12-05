@@ -37,7 +37,7 @@ So, let's dive in and unravel the secrets behind constructing these components. 
 
 ![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%202.png )
 
-* we need the flashlight to have a battery, and an off and on switch, which is what im going to do next by creating the UI first. online I found some UI elements that I can use for educational purposes which I will with the following folder I am using to create the flashlight mechanics.
+* We need the flashlight to have a battery, and an off and on switch, which is what im going to do next by creating the UI first. online I found some UI elements that I can use for educational purposes which I will with the following folder I am using to create the flashlight mechanics.
 
 ![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%203.png )
 
@@ -217,7 +217,7 @@ private void Flashlight()
         }
 ```
 
-* finally, in the update we check whether the flashlight bool is on true, if so the method battery drain should run – so that the battery is checked for when it reaches 0. 
+* Finally, in the update we check whether the flashlight bool is on true, if so the method battery drain should run – so that the battery is checked for when it reaches 0. 
 
 ```C#
     void Update()
