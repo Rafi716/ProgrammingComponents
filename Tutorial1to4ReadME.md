@@ -33,7 +33,7 @@ So, let's dive in and unravel the secrets behind constructing these components. 
 
 ![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%201.png )
 
-* Follow the settings I have made for my flashlight or create your own flashlight aesthetic with the options under the light panel. Do not forget to add a cookie to create that flashlight circular effect like I did from the standard assets of your choosing: 
+* Follow the settings I have made for my flashlight or create your own flashlight aesthetic with the options under the light component. Do not forget to add a cookie to create that flashlight circular effect like I did from the standard assets of your choosing: 
 
 ![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%202.png )
 
