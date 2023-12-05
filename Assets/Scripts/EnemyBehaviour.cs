@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
+    private ESCounter enemyCounter; // finds our enemy counter
+
     [Header("EnemyDamageEvents")]
     public int Damage; // amount of damage the enemy inflicts with each attack
     public int DPS; // damage per second - the rate of damage
@@ -13,6 +15,7 @@ public class EnemyBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemyCounter = FindObjectOfType<ESCounter>();
         StartCoroutine(DealDamage()); // start the coroutine to deal damage 
     }
 
@@ -42,6 +45,11 @@ public class EnemyBehaviour : MonoBehaviour
         {
             thisshouldgetdamaged.Remove(collision.gameObject.GetComponent<Idamager>()); // remove the object from the list and stop the damage 
         }
+    }
+
+    private void OnDestroy() // when the object is destroyed
+    {
+        enemyCounter.TotalSpawned--; // the referenced script with the counter is decremented
     }
 
     // Update is called once per frame

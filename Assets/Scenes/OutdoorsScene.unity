@@ -377,6 +377,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &994312081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 994312083}
+  - component: {fileID: 994312082}
+  m_Layer: 0
+  m_Name: SpawnCounter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &994312082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994312081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 557f9664e2ac27b4dbb9477fd3248f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TotalSpawned: 0
+--- !u!4 &994312083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994312081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.981, y: 1.7332557, z: -6.4042583}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1042159530 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6153336917627120287, guid: 636455f3714249a45a8eaa80fb25041d,
@@ -979,6 +1024,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4123159484622024032, guid: 1b5f286c39a592d4daf85c71a7c3e9b4,
+        type: 3}
+      propertyPath: EnemySpawnCounter
+      value: 
+      objectReference: {fileID: 994312082}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5f286c39a592d4daf85c71a7c3e9b4, type: 3}
 --- !u!1001 &6153336918745481858

@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     [Header("Camera turn")]
     public Transform CameraOBJ; // obj to transform the value of the camera within the CameraOBJ object
     public float MinXTurn; // min and max for looking to avoid the spinning bug
-    public float MaxXTurn;
+    public float MaxXTurn; 
     public float LookSens; // value for changing the sensitivity of looking around
 
     private Vector2 MouseDelta;

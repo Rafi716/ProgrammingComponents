@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour, Idamager
 {
@@ -42,6 +43,11 @@ public class PlayerHealth : MonoBehaviour, Idamager
     public void PlayerDeath() // function for the death of the player
     {
         GetDamaged?.Invoke(); // the question mark checks if the function isnt null then invoke the method
+        
+        if (HealthRemaining.CurrentValue <= 0.0f) // check if the players health has reached 0
+        {
+            SceneManager.LoadScene("EndScene"); // open the end scene 
+        }
     }
 }
 

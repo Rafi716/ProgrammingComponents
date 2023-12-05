@@ -16,11 +16,15 @@ public class GameTime : MonoBehaviour
     private const int MaxHour = 6; // static integer variable declared for the number 6
     private bool endSceneLoaded = false; // flag to track if the end scene has been loaded
 
+    private ESCounter EnemySpawnCounter;
+
+
     // Start is called before the first frame update
     void Start()
     {
         CurrentTimer = 60.0f; // currenttimer starts at 60
         TimeUpdate(); // timeupdates 
+        EnemySpawnCounter = FindObjectOfType<ESCounter>();
     }
 
     // Update is called once per frame
@@ -34,7 +38,15 @@ public class GameTime : MonoBehaviour
                 HourCount++; // hour increments 
                 CurrentTimer = 60.0f; // reset the timer back to 60 for loop
 
-                if (HourCount >= MaxHour) // if the hourcount reaches or exceeds the maxhour 
+                
+                if (HourCount >= MaxHour && EnemySpawnCounter.TotalSpawned <= 0) // checks if hourcount is 6 and if the enemies that have spawned are all dead
+                {
+                    LoadWinScene(); // load the winners scene 
+                    endSceneLoaded = true; // endscene is loaded
+                    return; // exit the loop
+                }
+                
+                else if (HourCount >= MaxHour) // if the hourcount reaches or exceeds the maxhour 
                 {
                     LoadEndScene(); // Load the end scene
                     endSceneLoaded = true; // Set the flag to true to avoid further updates
@@ -53,5 +65,10 @@ public class GameTime : MonoBehaviour
     void LoadEndScene()
     {
         SceneManager.LoadScene("EndScene"); // Load the desired scene by its name
+    }
+
+    void LoadWinScene() 
+    {
+        SceneManager.LoadScene("WinScene");
     }
 }
