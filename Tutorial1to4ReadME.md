@@ -37,7 +37,7 @@ So, let's dive in and unravel the secrets behind constructing these components. 
 
 ![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%202.png )
 
-* we need the flashlight to have a battery, and an off and on switch, which is what im going to do next by creating the UI first. online I found some UI elements that I can use for educational purposes which I will with the following folder I am using to create the flashlight mechanics.
+* We need the flashlight to have a battery, and an off and on switch, which is what im going to do next by creating the UI first. Online I found some UI elements that I can use for educational purposes which I will with the following folder I am using to create the flashlight mechanics.
 
 ![Alt text]( https://github.com/Rafi716/ProgrammingComponents/blob/main/TUTORIAL%20SS/TUT%201/TUT%201%20SS%203.png )
 
@@ -217,7 +217,7 @@ private void Flashlight()
         }
 ```
 
-* finally, in the update we check whether the `flashLightActive` bool is on `true`, if so the method battery drain should run – so that the battery is checked for when it reaches 0. 
+* Finally, in the update we check whether the `flashLightActive` bool is on `true`, if so the method battery drain should run – so that the battery is checked for when it reaches 0. 
 
 ```C#
     void Update()
@@ -306,7 +306,7 @@ Firstly, I initiated some new variables:
     }
 ```
 
-* for the destroy to work now, we will have to call our `RaycastIsOn` method in the update under the conditons of whether the flashlight is active:
+* For the destroy to work now, we will have to call our `RaycastIsOn` method in the update under the conditons of whether the flashlight is active:
 
 ```C#
     void Update()
@@ -418,7 +418,7 @@ public class HealthNeeds // i created a new class for the different events the h
 
 * The `Add` method literally adds health to the player, where the amount variable is literally what is going to be added to the player. `CurrentValue` is increased by the variable `amount` and `Mathf.Min` makes sure that `CurrentValue` does not go over the maximum Health Value therefore choosing the smallest of values when compared. Therefore, makes this method for preventing the player from increasing their max health.
 
-	The `Subtract` method essentially removes health from the player using the cache variable called `amount`. `Mathf.Max` ensures that `CurrentValue` does not go below 0.0f; since a player should not have health that is in the negatives so it will choose the larger number in comparison to the two numbers.
+The `Subtract` method essentially removes health from the player using the cache variable called `amount`. `Mathf.Max` ensures that `CurrentValue` does not go below 0.0f; since a player should not have health that is in the negatives so it will choose the larger number in comparison to the two numbers.
 
 `PercentageLeft` method calculates the percentage of the players health. This is done by dividing `CurrentValue` by the `MaxHealthValue`
 
@@ -577,7 +577,7 @@ Lastly, the list variable `thisshouldgetdamaged` will append objects into a list
     }
 ```
 
-* lastly, we define two methods for when the player enters and exits the collision in order to give and stop damage dealt to the players health.
+* Lastly, we define two methods for when the player enters and exits the collision in order to give and stop damage dealt to the players health.
 
 ```C#
     private void OnCollisionEnter(Collision collision) // when the object / enemy collides
@@ -704,7 +704,7 @@ The results should look like this:
 
 * Since we have created the script for the player flashlight, we want to be able to recharge the battery even if the battery had depleted completely so that the player is able to access the flashlight even after using all the battery.
 
-*I am going to create battery objects which the enemy will leave behind once they are destroyed from our scene - so that the player may pick them up for a small recharge of their flashlight, afterall the player is using their flashlight as a weapon too.
+* I am going to create battery objects which the enemy will leave behind once they are destroyed from our scene - so that the player may pick them up for a small recharge of their flashlight, afterall the player is using their flashlight as a weapon too.
 
 * First of all, we are going to create a gameobject which will be the batteries for the player, in this case I’m adding a cylinder and adding a capsule collider as well as a rigid body additionally a box collider which will be set to trigger – in order to interact with the battery gameobject. 
 
