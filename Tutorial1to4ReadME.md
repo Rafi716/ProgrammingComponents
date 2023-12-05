@@ -58,7 +58,7 @@ using UnityEngine;
 using UnityEngine.UI; 
 ```
 
-* Afterwards, we will create three variables where one of them will be handling the UI image of the battery bars. Another variable in the float datatype which will handle the amount of power held in the battery which will be set to 1.0 since the battery chunks of the battery itself will be decreasing in intervals of 0.25 to slice the image up by quarters for that power drain aesthetic. And lastly the drainage of the battery which will be used for the time when the drain should occur on the battery.
+* Afterwards, we will create three variables where one of them will be handling the UI `image` of the battery bars. Another variable in the `float` datatype which will handle the amount of power held in the battery which will be set to 1.0 since the battery chunks of the battery itself will be decreasing in intervals of 0.25 to slice the image up by quarters for that power drain aesthetic. And lastly the drainage of the battery which will be used for the time when the drain should occur on the battery.
 
 ```C# 
 [Header("BatteryCanvas")]
@@ -217,7 +217,7 @@ private void Flashlight()
         }
 ```
 
-* finally, in the update we check whether the flashlight bool is on true, if so the method battery drain should run – so that the battery is checked for when it reaches 0. 
+* finally, in the update we check whether the `flashLightActive` bool is on `true`, if so the method battery drain should run – so that the battery is checked for when it reaches 0. 
 
 ```C#
     void Update()
@@ -249,7 +249,7 @@ Firstly, I initiated some new variables:
     private bool Destroyed = false; // bool for when the object had been destroyed
 ```
 
-* Then I backtracked back to the previous script (movment/look) in which I created a `Raycast` function to check whether the `FlashLightActive` is true, and if so – then a raycast pointer should face the same direction as the direction of the flashlight is currently facing. 
+* Then I backtracked back to the previous script (movment/look) in which I created a `Raycast` function to check whether the `FlashLightActive` is `true`, and if so – then a raycast pointer should face the same direction as the direction of the flashlight is currently facing. 
 
 ```C#
     private void RaycastIsOn() // this method will allow the raycast to be on conitnuously under the update function only if the flashlightactive bool is true
