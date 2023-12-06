@@ -13,7 +13,7 @@ public class EnemyBehaviour : MonoBehaviour
     private List<Idamager> thisshouldgetdamaged = new List<Idamager>(); // list created which will append what objects can be damaged by the enemy
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         enemyCounter = FindObjectOfType<ESCounter>();
         StartCoroutine(DealDamage()); // start the coroutine to deal damage 

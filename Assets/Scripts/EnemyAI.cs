@@ -39,10 +39,10 @@ public class EnemyAI : MonoBehaviour
     public float MaxStrayWaitTimer; // max time for the enemy to stray
 
     [Header("NavMesh")]
-    private NavMeshAgent Agent; // the navmesh agent itself
+    protected NavMeshAgent Agent; // the navmesh agent itself
 
     [Header("Playerlocation")]
-    private Transform Playerslocation; // players realtime location 
+    protected Transform Playerslocation; // players realtime location - by adding protected, the class that inherits from here can view and tamper with this variable
 
     private void Awake()
     {
@@ -51,13 +51,13 @@ public class EnemyAI : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start() // by adding protected virtual void, the start can be accessed in another class that inherits from here as well as override values
     {
         SetState(EnemyState.StrayMode); // enemy will always start straying
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         DistanceBetweenPlayer = Vector3.Distance(transform.position, Playerslocation.transform.position); // updates the distance between the enemy and the player
         switch (enemyState) // switch statements for the different enemy states
@@ -68,7 +68,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    void PassiveUpdate() // method for handling the idle and stray behaviour of the mobs
+    protected virtual void PassiveUpdate() // method for handling the idle and stray behaviour of the mobs
     {
         if (enemyState == EnemyState.StrayMode && Agent.remainingDistance < 0.1f) // check if the enemy is in straymode and reached the destination
         {
@@ -110,7 +110,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    void AggressiveUpdate()  // Perform attacking behavior here when in Aggressive mode
+    protected virtual void AggressiveUpdate()  // Perform attacking behavior here when in Aggressive mode
     {
         if (DistanceBetweenPlayer >= DistanceToAvoid) // checks if distance the is greater than or equal to the distance the player is undetected  
         {
@@ -121,7 +121,7 @@ public class EnemyAI : MonoBehaviour
         Agent.SetDestination(Playerslocation.position); // else follow player
     }
 
-    void SetState(EnemyState NewState) // setting the enemy state, idle, stray, attacking
+    public void SetState(EnemyState NewState) // setting the enemy state, idle, stray, attacking
     {
         enemyState = NewState; // update the enemies state with the cache variable 
         switch (enemyState) // based on newstate, update the enemies state
